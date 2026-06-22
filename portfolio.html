@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meghaa Panchal &mdash; Graphic Designer</title>
+    <style>
+        @font-face {
+            font-family: 'The Bold Font';
+            src: url('fonts/THEBOLDFONT-FREEVERSION.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Spartan MB Bold';
+            src: url('fonts/SpartanMB-SemiBold.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'More Sugar';
+            src: url('fonts/MoreSugar-Regular.ttf')  format('truetype'),
+                 url('fonts/MoreSugar.ttf')          format('truetype'),
+                 url('fonts/more-sugar.ttf')         format('truetype'),
+                 url('fonts/MoreSugar-Regular.otf')  format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Bimbo';
+            src: url('fonts/Bimbo.ttf')  format('truetype'),
+                 url('fonts/bimbo.ttf')  format('truetype'),
+                 url('fonts/Bimbo.otf')  format('opentype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #F5F2EC;
+            --ink: #0E0E0E;
+            --muted: #6C6C6C;
+            --border: #D9D5CC;
+            --purple: #5C3DA8;
+            --gold: #D4880E;
+            --gap: 10px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Spartan MB Bold', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========== NAV ========== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 200;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background: rgba(245, 242, 236, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-name {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+            line-height: 1;
+            color: var(--ink);
+            text-decoration: none;
+        }
+        .nav-name-brand {
+            font-family: 'More Sugar', 'Brush Script MT', cursive;
+            font-size: 26px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+        .nav-name-ph {
+            font-family: 'Bimbo', 'Marker Felt', 'Comic Sans MS', cursive;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover { color: var(--purple); }
+
+        /* ========== SECTION INDEX ========== */
+        .section-index {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .section-index .num {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 28px;
+            color: var(--ink);
+            letter-spacing: 0.02em;
+        }
+
+        .section-index .label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: 140px 40px 90px;
+            max-width: 1500px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .hero-eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 36px;
+        }
+
+        .hero-stack {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 0.88;
+            letter-spacing: -0.005em;
+            margin-bottom: 56px;
+        }
+
+        .hero-stack span {
+            display: block;
+            font-size: clamp(72px, 13vw, 200px);
+            color: var(--ink);
+        }
+
+        .hero-stack span.accent-purple { color: var(--purple); }
+        .hero-stack span.accent-gold   { color: var(--gold); }
+        .hero-stack span.outline {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--ink);
+        }
+
+        .hero-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 64px;
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--ink);
+            max-width: 460px;
+            font-weight: 400;
+        }
+
+        .hero-desc strong { font-weight: 600; }
+
+        .hero-stats {
+            display: flex;
+            gap: 56px;
+            flex-shrink: 0;
+        }
+
+        .hero-stat-num {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 56px;
+            color: var(--ink);
+            line-height: 1;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-stat-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        /* ========== WORK ========== */
+        #work {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 64px 40px 80px;
+            border-top: 1px solid var(--border);
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .work-heading {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: clamp(48px, 7vw, 96px);
+            line-height: 0.9;
+            letter-spacing: -0.005em;
+        }
+
+        .work-heading em {
+            font-style: normal;
+            color: var(--gold);
+        }
+
+        .filters {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 9px 18px;
+            font-family: 'Spartan MB Bold', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            border: 1.5px solid var(--ink);
+            background: transparent;
+            color: var(--ink);
+            cursor: pointer;
+            transition: all 0.18s;
+            outline: none;
+        }
+
+        .filter-btn:hover { background: var(--ink); color: var(--bg); }
+
+        .filter-btn.active {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: var(--bg);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+        }
+
+        .project-card {
+            cursor: pointer;
+            display: block;
+            position: relative;
+        }
+
+        .project-card.hidden { display: none; }
+
+        .project-card-thumb {
+            overflow: hidden;
+            background: #E0DCD3;
+            position: relative;
+        }
+
+        .project-card-thumb img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.55s cubic-bezier(0.25,0.1,0.25,1), filter 0.4s;
+        }
+
+        .project-card:hover .project-card-thumb img {
+            transform: scale(1.04);
+        }
+
+        .project-card-num {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 16px;
+            color: rgba(255,255,255,0.92);
+            background: rgba(0,0,0,0.45);
+            padding: 4px 10px;
+            letter-spacing: 0.04em;
+            z-index: 2;
+        }
+
+        .project-card-info {
+            padding: 18px 4px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .project-card-category {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .project-card-title {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 32px;
+            letter-spacing: 0.005em;
+            color: var(--ink);
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .project-card-subtitle {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        .project-card-arrow {
+            font-size: 20px;
+            color: var(--ink);
+            transition: transform 0.25s, color 0.2s;
+            margin-top: 4px;
+            opacity: 0.6;
+        }
+
+        .project-card:hover .project-card-arrow {
+            transform: translate(4px, -4px);
+            opacity: 1;
+            color: var(--purple);
+        }
+
+        /* ========== ABOUT ========== */
+        #about {
+            border-top: 1px solid var(--border);
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 96px 40px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 96px;
+            align-items: start;
+        }
+
+        .about-stack {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 0.9;
+            letter-spacing: -0.005em;
+            position: sticky;
+            top: 110px;
+        }
+
+        .about-stack span {
+            display: block;
+            font-size: clamp(56px, 8vw, 120px);
+            color: var(--ink);
+        }
+
+        .about-stack span.accent { color: var(--purple); }
+
+        .about-body {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #2C2C2C;
+        }
+
+        .about-body p + p { margin-top: 22px; }
+        .about-body strong { font-weight: 600; color: var(--ink); }
+
+        .services {
+            margin-top: 44px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-top: 1.5px solid var(--ink);
+            border-left: 1.5px solid var(--ink);
+        }
+
+        .service-item {
+            padding: 18px 22px;
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: var(--ink);
+            border-right: 1.5px solid var(--ink);
+            border-bottom: 1.5px solid var(--ink);
+            transition: background 0.2s, color 0.2s;
+            cursor: default;
+        }
+
+        .service-item:hover { background: var(--ink); color: var(--bg); }
+
+        /* ========== CONTACT ========== */
+        #contact {
+            border-top: 1px solid var(--border);
+            background: var(--ink);
+            color: var(--bg);
+            padding: 100px 40px 120px;
+        }
+
+        .contact-inner {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        #contact .section-index .num { color: var(--bg); }
+        #contact .section-index .label { color: rgba(245,242,236,0.55); }
+
+        .contact-stack {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 0.88;
+            letter-spacing: -0.005em;
+            margin-bottom: 56px;
+        }
+
+        .contact-stack span {
+            display: block;
+            font-size: clamp(72px, 12vw, 180px);
+            color: var(--bg);
+        }
+
+        .contact-stack span.accent { color: var(--gold); }
+        .contact-stack span.outline {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--bg);
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 48px;
+            border-top: 1px solid rgba(245,242,236,0.18);
+            padding-top: 36px;
+            flex-wrap: wrap;
+        }
+
+        .contact-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(245,242,236,0.78);
+            max-width: 500px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: clamp(28px, 3.6vw, 48px);
+            color: var(--bg);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--bg);
+            transition: color 0.2s, border-color 0.2s, transform 0.2s;
+        }
+
+        .contact-email:hover { color: var(--gold); border-color: var(--gold); }
+        .contact-email .arrow { transition: transform 0.2s; font-size: 0.7em; }
+        .contact-email:hover .arrow { transform: translate(4px, -4px); }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--ink);
+            padding: 28px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(245,242,236,0.1);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-brand {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 16px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--bg);
+        }
+
+        .footer-note {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(245,242,236,0.4);
+        }
+
+        /* ========== LIGHTBOX ========== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 500;
+            background: #050505;
+            flex-direction: column;
+        }
+
+        .lightbox.open { display: flex; }
+
+        .lb-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 32px;
+            flex-shrink: 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .lb-project-title {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 22px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .lb-project-sub {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin-top: 4px;
+        }
+
+        .lb-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lb-counter {
+            font-family: 'The Bold Font', Impact, sans-serif;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            margin-right: 12px;
+            letter-spacing: 0.04em;
+        }
+
+        .lb-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: rgba(255,255,255,0.55);
+            background: none;
+            border: 1px solid rgba(255,255,255,0.18);
+            font-size: 16px;
+            transition: all 0.18s;
+            outline: none;
+        }
+
+        .lb-btn:hover { color: #fff; border-color: #fff; background: rgba(255,255,255,0.05); }
+        .lb-btn:disabled { opacity: 0.2; cursor: default; }
+        .lb-btn.close-btn { font-size: 18px; margin-left: 8px; }
+
+        .lb-stage {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 32px;
+            min-height: 0;
+        }
+
+        .lb-img-wrap {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lb-main-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .lb-main-img.loaded { opacity: 1; }
+
+        .lb-spinner {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-top-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .lb-desc {
+            font-size: 12px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.35);
+            text-align: center;
+            padding: 0 32px 12px;
+            max-width: 680px;
+            margin: 0 auto;
+            flex-shrink: 0;
+        }
+
+        .lb-thumbs {
+            display: flex;
+            gap: 6px;
+            padding: 12px 32px 22px;
+            overflow-x: auto;
+            justify-content: center;
+            flex-shrink: 0;
+            scrollbar-width: none;
+        }
+
+        .lb-thumbs::-webkit-scrollbar { display: none; }
+
+        .lb-thumb {
+            width: 60px;
+            height: 44px;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: opacity 0.2s;
+            flex-shrink: 0;
+            border: 1px solid transparent;
+        }
+
+        .lb-thumb:hover { opacity: 0.7; }
+        .lb-thumb.active { opacity: 1; border-color: rgba(255,255,255,0.6); }
+
+        /* ========== BACK TO HOME BUTTON ========== */
+        .back-btn {
+            position: fixed;
+            bottom: 28px;
+            left: 28px;
+            z-index: 250;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-family: 'Spartan MB Bold', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.22);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .back-btn:hover { background: var(--purple); transform: translateY(-2px); }
+        .back-btn .arrow { font-size: 14px; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1100px) {
+            .project-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-stack { position: static; }
+        }
+
+        @media (max-width: 900px) {
+            nav { padding: 16px 28px; }
+            .hero { padding: 120px 28px 64px; }
+            #work { padding: 56px 28px 64px; }
+            #about { padding: 72px 28px; }
+            #contact { padding: 80px 28px 96px; }
+            footer { padding: 22px 28px; }
+            .hero-row { flex-direction: column; align-items: flex-start; gap: 36px; }
+            .hero-stats { gap: 40px; }
+            .contact-row { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 640px) {
+            nav { padding: 14px 18px; }
+            .nav-links { gap: 18px; }
+            .nav-links a { font-size: 10px; letter-spacing: 0.14em; }
+            .hero { padding: 100px 18px 52px; }
+            .hero-eyebrow { margin-bottom: 24px; font-size: 10px; }
+            .hero-stack { margin-bottom: 36px; }
+            .hero-stats { gap: 28px; flex-wrap: wrap; }
+            .hero-stat-num { font-size: 40px; }
+            #work { padding: 44px 18px 56px; }
+            .work-header { flex-direction: column; align-items: flex-start; }
+            .filters { gap: 4px; }
+            .filter-btn { padding: 7px 12px; font-size: 10px; letter-spacing: 0.1em; }
+            .project-grid { grid-template-columns: 1fr; }
+            #about { padding: 56px 18px; }
+            .services { grid-template-columns: 1fr; }
+            #contact { padding: 64px 18px 72px; }
+            footer { padding: 18px 18px; flex-direction: column; gap: 8px; text-align: center; }
+            .lb-bar { padding: 14px 18px; }
+            .lb-stage { padding: 16px 18px; }
+            .section-index .num { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-name">
+        <span class="nav-name-brand">Animeghaa</span><span class="nav-name-ph"> Production House</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+    <p class="hero-eyebrow">01 &nbsp;/&nbsp; Graphic Design &middot; Brand &middot; Print &middot; Illustration</p>
+
+    <h1 class="hero-stack">
+        <span>Design</span>
+        <span class="accent-purple">That</span>
+        <span class="outline">Refuses</span>
+        <span class="accent-gold">Basic.</span>
+    </h1>
+
+    <div class="hero-row">
+        <p class="hero-desc"><strong>Brand identity, print media, packaging, illustration.</strong> Built with craft, sharpened with intent. Made for brands that would rather be remembered than safe.</p>
+        <div class="hero-stats">
+            <div>
+                <div class="hero-stat-num">8</div>
+                <div class="hero-stat-label">Projects</div>
+            </div>
+            <div>
+                <div class="hero-stat-num">5</div>
+                <div class="hero-stat-label">Disciplines</div>
+            </div>
+            <div>
+                <div class="hero-stat-num">40+</div>
+                <div class="hero-stat-label">Pieces</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== WORK ========== -->
+<section id="work">
+    <div class="section-index">
+        <span class="num">02.</span>
+        <span class="label">Selected Work</span>
+    </div>
+
+    <div class="work-header">
+        <h2 class="work-heading">The <em>Receipts.</em></h2>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="brand-identity">Brand Identity</button>
+            <button class="filter-btn" data-filter="packaging">Packaging</button>
+            <button class="filter-btn" data-filter="print">Print &amp; Editorial</button>
+            <button class="filter-btn" data-filter="illustration">Illustration</button>
+            <button class="filter-btn" data-filter="typography">Typography</button>
+        </div>
+    </div>
+    <div class="project-grid" id="projectGrid"></div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+    <div class="section-index">
+        <span class="num">03.</span>
+        <span class="label">About</span>
+    </div>
+
+    <div class="about-grid">
+        <h2 class="about-stack">
+            <span>Made</span>
+            <span class="accent">With</span>
+            <span>Intent.</span>
+        </h2>
+        <div>
+            <div class="about-body">
+                <p>I'm <strong>Meghaa Panchal,</strong> a graphic designer with a thing for print, brand systems, and the kind of work that earns a second look. I move across brand identity, editorial, packaging, and illustration, from first sketch to final artwork.</p>
+                <p>My work runs on cultural context, typographic precision, and a stubborn refusal to make anything forgettable. Good design isn't decoration. It's a story you can't stop thinking about.</p>
+                <p>I've worked with brands across the <strong>arts, hospitality, and wellness</strong> sectors, helping them sound like themselves and look like no one else.</p>
+            </div>
+            <div class="services">
+                <div class="service-item">Brand Identity</div>
+                <div class="service-item">Print Media</div>
+                <div class="service-item">Packaging</div>
+                <div class="service-item">Editorial</div>
+                <div class="service-item">Book Illustration</div>
+                <div class="service-item">Typography</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+    <div class="contact-inner">
+        <div class="section-index">
+            <span class="num">04.</span>
+            <span class="label">Contact</span>
+        </div>
+
+        <h2 class="contact-stack">
+            <span>Let's</span>
+            <span class="accent">Make</span>
+            <span class="outline">Something</span>
+            <span>Loud.</span>
+        </h2>
+
+        <div class="contact-row">
+            <p class="contact-text">Open to brand identity, print, packaging, and illustration projects. Building from scratch or sharpening what's already there, either way, send a line.</p>
+            <a class="contact-email" href="mailto:animeghaaproductionhouse@gmail.com">
+                animeghaaproductionhouse@gmail.com
+                <span class="arrow">&#8599;</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== BACK TO HOME (floating) ========== -->
+<a href="index.html" class="back-btn">
+    <span class="arrow">&larr;</span> Back to Home
+</a>
+
+<footer>
+    <span class="footer-brand">Meghaa Panchal</span>
+    <span class="footer-note">&copy; 2026 &nbsp;/&nbsp; All Rights Reserved</span>
+</footer>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" id="lightbox">
+    <div class="lb-bar">
+        <div>
+            <div class="lb-project-title" id="lbTitle"></div>
+            <div class="lb-project-sub" id="lbSub"></div>
+        </div>
+        <div class="lb-controls">
+            <span class="lb-counter" id="lbCounter"></span>
+            <button class="lb-btn" id="lbPrev">&#8592;</button>
+            <button class="lb-btn" id="lbNext">&#8594;</button>
+            <button class="lb-btn close-btn" id="lbClose">&#10005;</button>
+        </div>
+    </div>
+    <div class="lb-stage">
+        <div class="lb-img-wrap">
+            <div class="lb-spinner" id="lbSpinner"></div>
+            <img class="lb-main-img" id="lbMainImg" src="" alt="">
+        </div>
+    </div>
+    <p class="lb-desc" id="lbDesc"></p>
+    <div class="lb-thumbs" id="lbThumbs"></div>
+</div>
+
+<script>
+    function imgUrl(folder, filename) {
+        return encodeURIComponent(folder) + '/' + encodeURIComponent(filename);
+    }
+
+    const projects = [
+        {
+            id: 'aph',
+            title: 'APH',
+            subtitle: 'Animegha Production House',
+            category: 'brand-identity',
+            categoryLabel: 'Brand Identity',
+            desc: 'Full brand identity for an animation studio. Logo anatomy, colour system, stationery, and real-world brand applications.',
+            folder: 'APH',
+            hero: 'Brand_identity_presentation_sheet_202606111041.jpeg',
+            images: [
+                'Brand_identity_presentation_sheet_202606111041.jpeg',
+                'Glass_office_building_with_logo_202606111041.jpeg',
+                'Glass_entrance_door_animation_st…_202606111041.jpeg',
+                'Desktop_screen_animation_studio_…_202606111041.jpeg',
+                'Studio_stationery_flat_lay_white…_202606111041.jpeg',
+                'Spiral_sketchbook_on_wooden_desk_202606111041.jpeg',
+                'Clapperboard_on_animation_studio…_202606111041.jpeg',
+            ]
+        },
+        {
+            id: 'aarambh',
+            title: 'Aarambh',
+            subtitle: 'Cultural Identity System',
+            category: 'brand-identity',
+            categoryLabel: 'Brand Identity',
+            desc: 'Brand identity built around Devanagari script and handcrafted texture for a cultural performance collective.',
+            folder: 'Aarambh',
+            hero: 'Brand_guidelines_poster_mockup_202606111048.jpeg',
+            images: [
+                'Brand_guidelines_poster_mockup_202606111048.jpeg',
+                'Aarambh_logo_on_stage_backdrop_202606111048.jpeg',
+                'Brand_identity_presentation_busi…_202606111048.jpeg',
+                'Two_business_cards_overlapping_dark_202606111048.jpeg',
+                'Luxury_business_card_mockup_flat…_202606111048.jpeg',
+                'Jute_tote_bag_with_logo_202606111048.jpeg',
+                'Wedding_stationery_flat_lay_cream_202606111048.jpeg',
+            ]
+        },
+        {
+            id: 'calii-love',
+            title: 'Calii Love',
+            subtitle: 'Packaging Design',
+            category: 'packaging',
+            categoryLabel: 'Packaging',
+            desc: 'Takeaway bag system for a tropical restaurant brand. Minimal structure, bold type, and botanical pattern detail.',
+            folder: 'Calii Love',
+            hero: 'Restaurant_take_away_bag_design_202606111042.jpeg',
+            images: [
+                'Restaurant_take_away_bag_design_202606111042.jpeg',
+                'Take_away_bag_mockup_calii_202606111042.jpeg',
+                'Take_away_bag_mockup_calii_202606111042 (1).jpeg',
+            ]
+        },
+        {
+            id: 'day-for-night',
+            title: 'Day for Night',
+            subtitle: 'Film Campaign',
+            category: 'print',
+            categoryLabel: 'Print & Editorial',
+            desc: 'Film screening campaign with a dual-state billboard. Stark graphic contrast by day, phosphorescent glow by night.',
+            folder: 'Day for night',
+            hero: 'Movie_poster_dual_state_mockup_202606111045.jpeg',
+            images: [
+                'Movie_poster_dual_state_mockup_202606111045.jpeg',
+                'Retro_cinema_lobby_film_poster_202606111045.jpeg',
+                'Film_criticism_magazine_layout_202606111045.jpeg',
+            ]
+        },
+        {
+            id: 'design-lang',
+            title: 'Design Lang',
+            subtitle: 'Illustration & Identity',
+            category: 'illustration',
+            categoryLabel: 'Illustration',
+            desc: 'A personal visual language spanning geometric illustration, editorial covers, mural work, and brand identity across print and apparel.',
+            folder: 'Design Lang',
+            hero: 'Reindeer_illustration_magazine_c…_202606111046.jpeg',
+            images: [
+                'Reindeer_illustration_magazine_c…_202606111046.jpeg',
+                'Office_with_kingfisher_wall_mural_202606111046.jpeg',
+                'Grey_hoodie_with_reindeer_graphic_202606111046.jpeg',
+                'Startup_agency_brand_identity_mo…_202606111046.jpeg',
+                'Startup_agency_brand_identity_mo…_202606111046 (1).jpeg',
+            ]
+        },
+        {
+            id: 'ekho-surf',
+            title: 'Ekho Surf',
+            subtitle: 'Resort Postcard',
+            category: 'packaging',
+            categoryLabel: 'Packaging',
+            desc: 'A handcrafted postcard for a Sri Lankan surf resort. Painted illustration meets destination branding.',
+            folder: 'Ekho Surf',
+            hero: 'Ekho_Surf_resort_postcard_mockup_202606111043.jpeg',
+            images: [
+                'Ekho_Surf_resort_postcard_mockup_202606111043.jpeg',
+            ]
+        },
+        {
+            id: 'print-media',
+            title: 'Print Media',
+            subtitle: 'Editorial & Packaging',
+            category: 'print',
+            categoryLabel: 'Print & Editorial',
+            desc: "A range of print work. Editorial magazine spreads, children's books, medical packaging, brochures, and greeting cards.",
+            folder: 'Print Media',
+            hero: 'Editorial_illustration_magazine_…_202606111047.jpeg',
+            images: [
+                'Editorial_illustration_magazine_…_202606111047.jpeg',
+                'Open_children’s_picture_book_ill…_202606111047.jpeg',
+                'Open_children’s_picture_book_ill…_202606111047 (1).jpeg',
+                'Newspaper_open_to_comic_section_202606111047.jpeg',
+                'Medical_device_packaging_box_mockup_202606111047.jpeg',
+                'Medical_device_packaging_box_mockup_202606111048.jpeg',
+                'Medical_device_brochure_mockup_202606111047.jpeg',
+                'Blank_greeting_card_mockup_desk_202606111047.jpeg',
+            ]
+        },
+        {
+            id: 'typography',
+            title: 'Typography',
+            subtitle: 'Type Experiments',
+            category: 'typography',
+            categoryLabel: 'Typography',
+            desc: 'Type as image. Experiments in scale, dimensionality, and environmental application across vinyl, books, murals, and digital.',
+            folder: 'Typography',
+            hero: 'Vinyl_record_sleeve_on_marble_202606111044.jpeg',
+            images: [
+                'Vinyl_record_sleeve_on_marble_202606111044.jpeg',
+                'Self_help_book_cover_mockup_202606111043.jpeg',
+                'Urban_street_mural_building_corner_202606111044.jpeg',
+                'Conference_stage_backdrop_3D_typ…_202606111043.jpeg',
+                'Music_promotion_graphic_on_phone_202606111045.jpeg',
+                'Remove_text_on_top_202606111044.jpeg',
+            ]
+        },
+    ];
+
+    // Render grid
+    const grid = document.getElementById('projectGrid');
+    projects.forEach((p, i) => {
+        const num = String(i + 1).padStart(2, '0');
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.dataset.category = p.category;
+        card.innerHTML = `
+            <div class="project-card-thumb">
+                <span class="project-card-num">${num}</span>
+                <img src="${imgUrl(p.folder, p.hero)}" alt="${p.title}" loading="lazy">
+            </div>
+            <div class="project-card-info">
+                <div>
+                    <div class="project-card-category">${p.categoryLabel}</div>
+                    <div class="project-card-title">${p.title}</div>
+                    <div class="project-card-subtitle">${p.subtitle}</div>
+                </div>
+                <span class="project-card-arrow">&#8599;</span>
+            </div>
+        `;
+        card.addEventListener('click', () => openLightbox(p));
+        grid.appendChild(card);
+    });
+
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const f = btn.dataset.filter;
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.classList.toggle('hidden', f !== 'all' && card.dataset.category !== f);
+            });
+        });
+    });
+
+    // Lightbox
+    let current = null;
+    let idx = 0;
+    const lb = document.getElementById('lightbox');
+    const lbMainImg = document.getElementById('lbMainImg');
+    const lbSpinner = document.getElementById('lbSpinner');
+    const lbTitle   = document.getElementById('lbTitle');
+    const lbSub     = document.getElementById('lbSub');
+    const lbDesc    = document.getElementById('lbDesc');
+    const lbCounter = document.getElementById('lbCounter');
+    const lbThumbs  = document.getElementById('lbThumbs');
+    const lbPrev    = document.getElementById('lbPrev');
+    const lbNext    = document.getElementById('lbNext');
+    const lbClose   = document.getElementById('lbClose');
+
+    function openLightbox(project, startIdx = 0) {
+        current = project;
+        lbTitle.textContent = project.title;
+        lbSub.textContent   = project.categoryLabel + '  /  ' + project.subtitle;
+        lbDesc.textContent  = project.desc;
+
+        lbThumbs.innerHTML = '';
+        project.images.forEach((img, i) => {
+            const t = document.createElement('img');
+            t.className = 'lb-thumb' + (i === startIdx ? ' active' : '');
+            t.src = imgUrl(project.folder, img);
+            t.loading = 'lazy';
+            t.addEventListener('click', () => goTo(i));
+            lbThumbs.appendChild(t);
+        });
+
+        showImage(startIdx);
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function showImage(i) {
+        idx = Math.max(0, Math.min(i, current.images.length - 1));
+        lbMainImg.classList.remove('loaded');
+        lbSpinner.style.display = 'block';
+
+        lbMainImg.onload  = () => { lbMainImg.classList.add('loaded'); lbSpinner.style.display = 'none'; };
+        lbMainImg.onerror = () => { lbSpinner.style.display = 'none'; lbMainImg.classList.add('loaded'); };
+        lbMainImg.src = imgUrl(current.folder, current.images[idx]);
+
+        document.querySelectorAll('.lb-thumb').forEach((t, j) => t.classList.toggle('active', j === idx));
+        const activeThumb = lbThumbs.children[idx];
+        if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+        lbCounter.textContent = (idx + 1) + ' / ' + current.images.length;
+        lbPrev.disabled = idx === 0;
+        lbNext.disabled = idx === current.images.length - 1;
+    }
+
+    function goTo(i) { showImage(i); }
+
+    function closeLightbox() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+        lbMainImg.src = '';
+        lbMainImg.classList.remove('loaded');
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click',  () => goTo(idx - 1));
+    lbNext.addEventListener('click',  () => goTo(idx + 1));
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape')     closeLightbox();
+        if (e.key === 'ArrowLeft')  goTo(idx - 1);
+        if (e.key === 'ArrowRight') goTo(idx + 1);
+    });
+</script>
+
+<!-- SMOOTH SCROLL (Lenis) -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+    const lenis = new Lenis({
+        duration: 1.25,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.6
+    });
+    function lenisRaf(time) { lenis.raf(time); requestAnimationFrame(lenisRaf); }
+    requestAnimationFrame(lenisRaf);
+
+    // hook in-page anchors so Lenis animates them
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -60 }); }
+        });
+    });
+
+    // disable smooth scroll while lightbox is open (so the body doesn't move underneath)
+    const lbEl = document.getElementById('lightbox');
+    if (lbEl) {
+        new MutationObserver(() => {
+            if (lbEl.classList.contains('open')) lenis.stop(); else lenis.start();
+        }).observe(lbEl, { attributes: true, attributeFilter: ['class'] });
+    }
+</script>
+</body>
+</html>
+                                                                            
